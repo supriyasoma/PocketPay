@@ -1,0 +1,8 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: https://bc94service-registry.zemoso.tk/eureka
+  instance:
+    hostname: bc94service-registry.zemoso.tk

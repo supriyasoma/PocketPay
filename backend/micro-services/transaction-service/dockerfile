@@ -1,0 +1,5 @@
+FROM openjdk:latest
+ADD target/transaction-service-0.0.1-SNAPSHOT.jar /tmp
+WORKDIR /tmp
+EXPOSE 8082
+ENTRYPOINT ["java", "-jar", "transaction-service-0.0.1-SNAPSHOT.jar"]  

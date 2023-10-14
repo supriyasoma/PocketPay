@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bc94-api-gateway
+  labels:
+    app: bc94-api
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: bc94-api
+    
+  template:
+    metadata:
+      name: bc94-api
+      labels:
+        app: bc94-api
+    spec:
+      containers:
+        - name: bc94-api-gateway
+          image: ghcr.io/himanshukapoor328/bc94-api-gateway:123
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9091
+          env:
+          - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            value: http://bc94-service-registry:8761/eureka
+          - name: EUREKA_INSTANCE_HOSTNAME
+            value: bc94-api-gateway
+      imagePullSecrets: 
+        - name: ghcr-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bc94-api-gateway
+  labels:
+    app: bc94-api
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9091
+    targetPort: 9091
+  selector:
+    app: bc94-api

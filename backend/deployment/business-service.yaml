@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bc94-business-service
+  labels:
+    app: bc94-business
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: bc94-business
+    
+  template:
+    metadata:
+      name: bc94-business
+      labels:
+        app: bc94-business
+    spec:
+      containers:
+        - name: bc94-business-service
+          image: ghcr.io/himanshukapoor328/bc94-business-service:123
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8083
+          env:
+          - name: spring.datasource.url
+            value: jdbc:mysql://a45730b8eed184af696fb99faa6237a0-262132431.us-east-2.elb.amazonaws.com:3306/pocketpay
+          - name: spring.datasource.username
+            value: root
+          - name: spring.datasource.password
+            value: admin@123
+          - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            value: http://bc94-service-registry:8761/eureka
+          - name: EUREKA_INSTANCE_HOSTNAME
+            value: bc94-business-service            
+      imagePullSecrets: 
+        - name: ghcr-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bc94-business-service
+  labels:
+    app: bc94-business
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8083
+    targetPort: 8083
+  selector:
+    app: bc94-business
+

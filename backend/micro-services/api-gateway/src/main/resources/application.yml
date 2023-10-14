@@ -1,0 +1,60 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name:
+      API-GATEWAY
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/**,/auth/**
+        - id: TRANSACTION-SERVICE
+          uri: lb://TRANSACTION-SERVICE
+          predicates:
+            - Path=/bank-master/**,/business-owner/**,/payment_tracker/**,/recipient/**,/transaction/**
+        - id: BUSINESS-SERVICE
+          uri: lb://BUSINESS-SERVICE
+          predicates:
+            - Path=/business/**,/businessnames/**,/categories/**,/subCategories/**,/tradingaddress/**
+
+  main:
+    web-application-type: reactive
+
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: TpvGJ07RVewQWw57B8htIUVyqiJAWCuG
+            client-secret: cV7UfglGEmzsurG7V0t7-cKv-nXG8tCXorBiOcTj2qmx9lIXCdTgaxNZrvMnGg3x
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          auth0:
+            # trailing slash is important!
+            issuer-uri: https://dev-nmfx75tg33qre8rh.us.auth0.com/
+            
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+     defaultZone: https://bc94service-registry.zemoso.tk/eureka
+  instance:
+    hostname: bc94service-registry.zemoso.tk
+     
+
