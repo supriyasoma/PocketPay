@@ -1,0 +1,15 @@
+.typostyle {
+  color:#141414;
+  font-size: 24px;
+  line-height: 40px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-bottom: 30px;
+}
+.stepper .css-wekutz-MuiTypography-root {
+    position: relative !important;
+  }
+.mainclass{
+    padding-left: 20px;
+    padding-right: 20px;
+}

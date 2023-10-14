@@ -1,0 +1,65 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.MuiSelect-select { 
+    background-color: #fff !important;
+    width: 135px !important;
+    border-bottom: none !important;
+}
+.send-money-step-amount{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-details-section{
+width: 520px;
+flex-shrink: 0;
+display: flex;
+flex-direction: column;
+gap:25px;
+margin-top: 20px;
+}
+
+.payment-details-content{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.test-typo:after{
+content: "";
+border: solid 1px #ccc;
+flex: 1 1;
+}
+
+
+.growth-rate-popup .MuiDialogActions-root{
+  justify-content: center !important;
+  padding-bottom: 25px !important;
+}
+
+
+.growth-rate-popup .MuiPaper-root{
+  border-radius:16px !important;
+  width: 564px !important;
+height: 335px !important;
+left: auto !important; 
+
+}
+.growth-rate-popup .MuiDialogContent-root{
+  padding:10% 5% !important;
+}
+.payment-details-section-grid-container .payment-details-section-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

@@ -1,0 +1,27 @@
+.default-dashboard-page{
+    width: 100%;
+    background-color: #fff;
+    min-height: 750px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.default-dashboard-content{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+}
+
+.default-message-block{
+    width: 526px;
+    text-align: center;
+}
+
+.default-image-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -1,0 +1,8 @@
+.bank-card-box{
+    cursor: pointer;
+    padding: 15px;
+}
+
+.bank-card-box:hover{
+   background-color: #ccc;
+}

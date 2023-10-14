@@ -1,0 +1,21 @@
+.styled-chip{
+    display: flex;
+    width: 63px;
+    height: 26px;
+    padding: 4px 12px 2px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 16px;
+background: var(--structural-color-button-hover, #F4EFFF);
+
+}
+
+.styled-chip .MuiChip-label{
+    text-align: center;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 21px; /* 150% */
+}

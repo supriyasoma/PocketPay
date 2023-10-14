@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bc94-frontend
+  labels:
+    app: bc94-front
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: bc94-front
+  template:
+    metadata:
+      name: bc94-front
+      labels:
+        app: bc94-front
+    spec:
+     containers:
+        - name: bc94-front
+          image: ghcr.io/himanshukapoor328/bc94-frontend:111
+          ports:
+            - containerPort: 80
+     imagePullSecrets: 
+        - name: ghcr-secret
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: bc94-frontend
+  labels:
+    app: bc94-front
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: bc94-front

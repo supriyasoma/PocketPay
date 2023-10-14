@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Gerbra";
+    src:url(/public/fonts/Gerbera-Regular.otf) format('opentype');  
+  }
+  * {
+    font-family: "Gerbra",sans-serif !important;
+    }

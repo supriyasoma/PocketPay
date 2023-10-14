@@ -1,0 +1,24 @@
+.step-recipient-container{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.recipient-options {
+    width: 516px;
+height: 220px;
+flex-shrink: 0;
+}
+
+.recipient-options .MuiListItem-root{
+    height: 60px !important;
+    border-radius: 8px;
+    border: 1px solid var(--grey-stroke, #E4E4E5) !important;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.recipient-options .MuiListItem-root:hover{
+    background-color:var(--grey-stroke, #E4E4E5);
+}

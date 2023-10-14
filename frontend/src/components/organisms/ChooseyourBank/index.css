@@ -1,0 +1,5 @@
+.choose-your-bank-outerbox{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}

@@ -1,0 +1,15 @@
+.transfer-options{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.transfer-option-content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.transfer-options-item:hover{
+    background-color:ghostwhite;
+}

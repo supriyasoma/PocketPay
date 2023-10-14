@@ -1,0 +1,11 @@
+.select-account-content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.select-account-type-page{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}

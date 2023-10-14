@@ -1,0 +1,18 @@
+.timeline-stepper .MuiStepConnector-root{
+    margin-left: 4px !important;
+}
+.timeline-stepper .Mui-active{
+color: #784af4 !important;
+}
+
+
+.timeline-stepper .Mui-completed .MuiStepConnector-line ,.timeline-stepper .Mui-active .MuiStepConnector-line {
+border-color: #784af4 !important;
+}
+
+.timeline-stepper .MuiStepConnector-line{
+    border-left: solid 2px #eaeaf0 !important;
+}
+.timeline-stepper{
+    position: relative;
+}

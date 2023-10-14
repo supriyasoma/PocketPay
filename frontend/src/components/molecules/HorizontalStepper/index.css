@@ -1,0 +1,37 @@
+.horizontal-stepper-container .MuiStepLabel-root{
+    float: right !important;
+    position: relative;
+  
+}
+ .horizontal-stepper-container .Mui-completed .MuiStepConnector-line
+ {
+    border-color: #E4D6FF !important;
+} 
+.horizontal-stepper-container .Mui-active .MuiStepConnector-line
+{
+   border-color: #E4D6FF !important;
+} 
+.horizontal-stepper-container .MuiStepLabel-labelContainer{
+    position: absolute;
+    top:30px;
+    left: -20px;
+    width: 130px !important;
+    text-align: left !important;
+}
+
+.horizontal-stepper-container .MuiStep-root{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.horizontal-stepper-container .MuiStepLabel-iconContainer{
+    padding-right: 0px !important;
+}
+
+.horizontal-stepper-container{
+    width: 57.68vw;
+    text-align: center;
+    height: 41px;
+    flex-shrink: 0;
+    padding:0px 15px;
+}

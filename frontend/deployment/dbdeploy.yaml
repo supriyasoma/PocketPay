@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bc94-database
+  labels:
+    app: bc94-db
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: bc94-db
+    
+  template:
+    metadata:
+      name: bc94-db
+      labels:
+        app: bc94-db
+    spec:
+      containers:
+        - name: bc94-db
+          image: mysql:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3306
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: admin@123
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bc94-database
+  labels:
+    app: bc94-db
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3306
+    targetPort: 3306
+  selector:
+    app: bc94-db

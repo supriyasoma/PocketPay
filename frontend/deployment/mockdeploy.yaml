@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bc94-mock
+  labels:
+    app: bc94-ms
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: bc94-ms
+  template:
+    metadata:
+      name: bc94-ms
+      labels:
+        app: bc94-ms
+    spec:
+     containers:
+        - name: bc94-ms
+          image: ghcr.io/himanshukapoor328/bc94-mock:111
+          ports:
+            - containerPort: 5000
+     imagePullSecrets: 
+        - name: ghcr-secret  
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: bc94-mock
+  labels:
+    app: bc94-ms
+spec:
+  # type: LoadBalancer
+  ports:
+    - port: 5000
+      targetPort: 5000
+  selector:
+    app: bc94-ms
+    

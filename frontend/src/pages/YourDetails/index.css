@@ -1,0 +1,18 @@
+.your-details-page-body{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 512px;
+    padding-top: 91px;
+}
+.your-details-form{
+    margin-top:20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.date-of-birth .MuiInputLabel-root , .date-of-birth .MuiOutlinedInput-root{
+    font-size: 17px !important;
+}
